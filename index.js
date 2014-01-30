@@ -1,13 +1,16 @@
-var http = require('http');
+var Hapi = require('hapi');
 
 var port = process.env.PORT || 8888;
 console.log('PORT: ', port);
 
-http.createServer(function (req, res) {
+var server = new Hapi.Server(port);
 
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
+var handler = function (request, reply) {
+  reply.file('./index.html');
+};
 
-}).listen(port);
+server.route({ method: 'GET', path: '/', handler: handler });
 
-console.log('Server running at :'+ port);
+server.start(function () {
+  console.log('Server started at: ' + server.info.uri);
+});
