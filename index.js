@@ -1,12 +1,12 @@
 var Hapi = require('hapi');
 
-var port = process.env.PORT || 8080;
-console.log('PORT: ', port);
+var port = process.env.PORT || 8888;
 
 var server = new Hapi.Server(port);
 
 var handler = function (request, reply) {
-  reply.file('./index.html');
+  console.log('woot, got a request');
+  reply.file(__dirname + '/index.html');
 };
 
 server.route({ method: 'GET', path: '/', handler: handler });
