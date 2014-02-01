@@ -17,7 +17,9 @@ RUN cd /src; npm install
 # 
 # Which ports you want to be exposing from this container
 #
-EXPOSE  8888
+EXPOSE  8080
+
+
 
 
 #
