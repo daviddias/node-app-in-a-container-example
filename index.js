@@ -1,6 +1,6 @@
 var Hapi = require('hapi');
 
-var port = process.env.PORT || 8888;
+var port = process.env.PORT || 8080;
 console.log('PORT: ', port);
 
 var server = new Hapi.Server(port);
