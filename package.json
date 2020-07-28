@@ -16,6 +16,6 @@
     "url": "https://github.com/diasdavid/sample-http-server/issues"
   },
   "dependencies": {
-    "hapi": "~2.1.2"
+    "hapi": "~18.1.0"
   }
 }
